@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { Stack } from '@mui/system'
@@ -11,6 +11,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import {  delResumeAPI, viewAllResume } from '../services/apiServices'
+import { Delete } from "@mui/icons-material";
+import IconButton from '@mui/material/IconButton'
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -47,6 +51,30 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 export default function Saved() {
+
+  const [resume,setResume]=useState([])
+
+  const getallresume=async()=>{
+    try{
+      const res = await viewAllResume()
+      // console.log(res.data);
+      setResume(res.data)
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
+
+const deleteResume=async(id)=>{
+        const res = await delResumeAPI(id)
+        console.log(res.data);
+        getallresume()
+        
+      }
+  
+  useEffect(()=>{getallresume()},[])
+
   return (
     <div>
       <Box>
@@ -103,14 +131,19 @@ export default function Saved() {
           </TableRow>
         </TableHead>
         <TableBody>
-            <StyledTableRow>
-              <StyledTableCell component="th" scope="row">
-                id
-              </StyledTableCell>
-              <StyledTableCell align="right">a</StyledTableCell>
-              <StyledTableCell align="right">b</StyledTableCell>
-              <StyledTableCell align="right">c</StyledTableCell>
+            {
+              resume.map(item=>(
+                <StyledTableRow key={item.id} >
+              <StyledTableCell  component="th" scope="row">{item.id} </StyledTableCell>
+              <StyledTableCell align="right">{item.name}</StyledTableCell>
+              <StyledTableCell align="right">{item.jobTitle}</StyledTableCell>
+              <StyledTableCell align="right">
+                <IconButton color="error" onClick={()=>deleteResume(item.id)}>
+                  <Delete />
+                </IconButton></StyledTableCell>
             </StyledTableRow>
+              ))
+            }
         </TableBody>
       </Table>
     </TableContainer>

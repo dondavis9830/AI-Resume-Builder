@@ -5,10 +5,12 @@ import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaDownload } from "react-icons/fa6";
 import { CiEdit } from "react-icons/ci";
 import { FaBackward } from "react-icons/fa";
+import { useParams } from 'react-router-dom'
+import { viewResumeAPI } from '../services/apiServices'
 
 const style = {
   position: 'absolute',
@@ -24,6 +26,27 @@ const style = {
 
 export default function View() {
 
+  const [resume,setResume]=useState({})
+  
+  const {id} =useParams()
+  console.log(id);
+
+  const viewResume = async(id) => {
+    try{
+      console.log(`don`)
+      const res = await viewResumeAPI(id)
+      console.log(res.data);
+      setResume(res.data)
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
+  useEffect(()=>{viewResume(id)},[])
+
+
+ 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -71,7 +94,7 @@ export default function View() {
           }}>
           <Typography variant='h5' sx={{fontWeight:700,fontFamily:'-moz-initial'}}></Typography>
           <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Name:</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Name:{resume.name}</Typography>
           </Stack>
           <Stack direction='row'>
             <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Email:</Typography>
@@ -155,20 +178,23 @@ export default function View() {
 
           }}>
           <Typography variant='h5' sx={{fontWeight:700,fontFamily:'-moz-initial'}}></Typography>
-          <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Email:</Typography>
+           <Stack direction='row'>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Name:{resume.name}</Typography>
           </Stack>
           <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Phone Number:</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Email:{resume.email}</Typography>
           </Stack>
           <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>LinkedIn:</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Phone Number:{resume.contactNumber}</Typography>
           </Stack>
           <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Github:</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>LinkedIn:{resume.linkedin}</Typography>
           </Stack>
           <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Location:</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Github:{resume.github}</Typography>
+          </Stack>
+          <Stack direction='row'>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Location:{resume.location}</Typography>
           </Stack>
            <Divider>
           <Typography variant='h5' 
@@ -180,6 +206,7 @@ export default function View() {
           </Typography>
         </Divider>
          <Typography>
+          {resume.summary}
            
          </Typography>
            <Divider>
@@ -191,10 +218,12 @@ export default function View() {
            Technical Skills
           </Typography>
         </Divider>
-        <Typography>
-         
+        <Box>
+         {resume.skill?.map(item=>(
+          <Stack direction='row' sx={{flexWrap:'wrap'}} key={item}>{item}</Stack>
+         ))}
           
-          </Typography>
+          </Box>
            <Divider>
           <Typography variant='h5' 
                       sx={{
@@ -205,13 +234,13 @@ export default function View() {
           </Typography>
         </Divider>
         <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Degree:</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Degree:{resume.degree}</Typography>
           </Stack>
           <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Collage:</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Collage:{resume.college}</Typography>
           </Stack>
           <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Year of Graduation:</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Year of Graduation:{resume.year}</Typography>
           </Stack>
         
           
