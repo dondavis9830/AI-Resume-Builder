@@ -46,8 +46,9 @@ export default function Download() {
                sx={{
                   display:'flex',
                   justifyContent:'space-between',
-                  mt:15,
+                  mt:20,
                   px:10,
+                  
                 
                }}>
                 <Typography variant='h4'

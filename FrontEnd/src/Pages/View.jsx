@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react'
 import { FaDownload } from "react-icons/fa6";
 import { CiEdit } from "react-icons/ci";
 import { FaBackward } from "react-icons/fa";
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { downloadSavedResumAPI, viewResumeAPI } from '../services/apiServices'
 import Swal from 'sweetalert2'
 import TextField from '@mui/material/TextField'
@@ -36,6 +36,11 @@ export default function View() {
   const [resumedata,setResumedata]=useState({})
   const {id} =useParams()
   // console.log(id);
+  const navigate=useNavigate()
+
+  const backToHome=async()=>{
+    navigate('/')
+  }
 
   const viewResume = async(id) => {
     try{
@@ -81,8 +86,9 @@ export default function View() {
         <Box>
           <Stack direction='row'
                  sx={{justifyContent:'center' , 
-                      gap:1 , 
+                      gap:5 , 
                       mt:10 , 
+                      p:5
                       }}>
             <Stack direction='row' sx={{justifyContent:'center',alignItems:'center' , }}>
               <FaDownload />
@@ -94,7 +100,7 @@ export default function View() {
             </Stack>
             <Stack direction='row' sx={{justifyContent:'center',alignItems:'center' , }}>
               <FaBackward />
-              <Button sx={{color:'crimson',}}>Home</Button>
+              <Button onClick={backToHome} sx={{color:'crimson',}}>Home</Button>
             </Stack>
             
             {/* modal body */}
@@ -115,8 +121,8 @@ export default function View() {
             padding:5,
           }}>
           <Typography variant='h5' sx={{fontWeight:700,fontFamily:'-moz-initial'}}></Typography>
-          <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Name:<TextField sx={{outline:'none'}}></TextField></Typography>
+          <Stack direction='row' sx={{justifyContent:'start',alignItems:'center',}}>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Name:<TextField sx={{'& .MuiOutlinedInput-root':{'& fieldset':{border:'none',}}}}></TextField></Typography>
           </Stack>
           <Stack direction='row'>
             <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Email:</Typography>
