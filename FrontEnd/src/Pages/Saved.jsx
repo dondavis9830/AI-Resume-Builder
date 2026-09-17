@@ -14,6 +14,7 @@ import Paper from '@mui/material/Paper';
 import {  delResumeAPI, viewAllResume } from '../services/apiServices'
 import { Delete } from "@mui/icons-material";
 import IconButton from '@mui/material/IconButton'
+import { Link } from 'react-router-dom'
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -135,7 +136,7 @@ const deleteResume=async(id)=>{
               resume.map(item=>(
                 <StyledTableRow key={item.id} >
               <StyledTableCell  component="th" scope="row">{item.id} </StyledTableCell>
-              <StyledTableCell align="right">{item.name}</StyledTableCell>
+              <StyledTableCell align="right"> <Link to={`/resume/${item.id}`} >{item.name}</Link> </StyledTableCell>
               <StyledTableCell align="right">{item.jobTitle}</StyledTableCell>
               <StyledTableCell align="right">
                 <IconButton color="error" onClick={()=>deleteResume(item.id)}>

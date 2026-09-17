@@ -12,34 +12,6 @@
       "college": "erty34rtwey34",
       "year": "34y34",
       "summary": "",
-      "id": "ydx-e-XvBaM"
-    },
-    {
-      "name": ",jhfljasdas",
-      "location": "lgweldew",
-      "jobTitle": "",
-      "email": "iug;iwyerfligypi;wefwe",
-      "contactNumber": "etyerertyr",
-      "linkedin": "6u",
-      "github": "ertyr",
-      "degree": "w45y34",
-      "college": "erty34rtwey34",
-      "year": "34y34",
-      "summary": "",
-      "id": "7LIO5ZBhVXs"
-    },
-    {
-      "name": ",jhfljasdas",
-      "location": "lgweldew",
-      "jobTitle": "",
-      "email": "iug;iwyerfligypi;wefwe",
-      "contactNumber": "etyerertyr",
-      "linkedin": "6u",
-      "github": "ertyr",
-      "degree": "w45y34",
-      "college": "erty34rtwey34",
-      "year": "34y34",
-      "summary": "",
       "id": "L_Lra6nC5VY"
     },
     {
@@ -293,32 +265,372 @@
       "id": "Q385x4fZ7ro"
     },
     {
-      "name": "qwe",
-      "location": "qwer",
-      "jobTitle": "Web Developer",
-      "email": "qwer",
-      "contactNumber": "wer",
-      "linkedin": "wert",
-      "github": "ert",
-      "degree": "qwer",
-      "college": "wert",
-      "year": "wert",
+      "name": "qwert",
+      "location": "qwsdc",
+      "jobTitle": "Database Administrator",
+      "email": "gdsjgf",
+      "contactNumber": "fkhgk",
+      "linkedin": "kytdkyt",
+      "github": "khgdkh",
+      "degree": "jrdstirs",
+      "college": "dfjrd",
+      "year": "yitditr",
       "skill": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Responsive Design",
-        "REST APIs",
-        "Git",
-        "Browser DevTools",
-        "Web Accessibility",
-        "Performance Optimization",
-        "SEO Basics"
+        "SQL",
+        "MySQL",
+        "PostgreSQL",
+        "Oracle",
+        "Database Security",
+        "Backup and Recovery",
+        "Performance Tuning",
+        "Replication",
+        "Monitoring",
+        "High Availability"
       ],
-      "summary": "Web developer experienced in creating responsive, accessible, and performance-focused websites using modern web technologies and development practices.",
-      "id": "3DL9v01M_bM"
+      "summary": "Database administrator experienced in managing secure, highly available databases, backups, recovery, performance tuning, and production operations.",
+      "id": "a4WhKW92eqk"
+    },
+    {
+      "name": "DON DAVIS",
+      "location": "THRISSUR",
+      "jobTitle": "HR Manager",
+      "email": "don@gmail.com",
+      "contactNumber": "9544598386",
+      "linkedin": "don9830",
+      "github": "don3098",
+      "degree": "BCA",
+      "college": "bharathiyar univercity",
+      "year": "2022",
+      "skill": [
+        "Recruitment",
+        "Employee Relations",
+        "Performance Management",
+        "Payroll",
+        "HR Policies",
+        "Talent Management",
+        "Onboarding",
+        "Training",
+        "Conflict Resolution",
+        "HR Analytics"
+      ],
+      "summary": "People-focused HR manager experienced in recruitment, employee relations, performance management, talent development, and HR operations.",
+      "id": "XgZTpjxSN2E"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "data": {
+        "name": ",jhfljasdas",
+        "location": "lgweldew",
+        "jobTitle": "",
+        "email": "iug;iwyerfligypi;wefwe",
+        "contactNumber": "etyerertyr",
+        "linkedin": "6u",
+        "github": "ertyr",
+        "degree": "w45y34",
+        "college": "erty34rtwey34",
+        "year": "34y34",
+        "summary": "",
+        "id": "L_Lra6nC5VY"
+      },
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "content-length": "293",
+        "content-type": "application/json"
+      },
+      "config": {
+        "transitional": {
+          "silentJSONParsing": true,
+          "forcedJSONParsing": true,
+          "clarifyTimeoutError": false,
+          "legacyInterceptorReqResOrdering": true,
+          "advertiseZstdAcceptEncoding": false,
+          "validateStatusUndefinedResolves": true
+        },
+        "adapter": [
+          "xhr",
+          "http",
+          "fetch"
+        ],
+        "transformRequest": [
+          null
+        ],
+        "transformResponse": [
+          null
+        ],
+        "timeout": 1000,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "env": {},
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/json"
+        },
+        "baseURL": "http://localhost:3000",
+        "method": "get",
+        "url": "/resume/L_Lra6nC5VY",
+        "data": "{}",
+        "allowAbsoluteUrls": true
+      },
+      "request": {},
+      "id": "knOXjcxnBf4"
+    },
+    {
+      "data": {
+        "name": ",jhfljasdas",
+        "location": "lgweldew",
+        "jobTitle": "",
+        "email": "iug;iwyerfligypi;wefwe",
+        "contactNumber": "etyerertyr",
+        "linkedin": "6u",
+        "github": "ertyr",
+        "degree": "w45y34",
+        "college": "erty34rtwey34",
+        "year": "34y34",
+        "summary": "",
+        "id": "L_Lra6nC5VY"
+      },
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "content-length": "293",
+        "content-type": "application/json"
+      },
+      "config": {
+        "transitional": {
+          "silentJSONParsing": true,
+          "forcedJSONParsing": true,
+          "clarifyTimeoutError": false,
+          "legacyInterceptorReqResOrdering": true,
+          "advertiseZstdAcceptEncoding": false,
+          "validateStatusUndefinedResolves": true
+        },
+        "adapter": [
+          "xhr",
+          "http",
+          "fetch"
+        ],
+        "transformRequest": [
+          null
+        ],
+        "transformResponse": [
+          null
+        ],
+        "timeout": 1000,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "env": {},
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/json"
+        },
+        "baseURL": "http://localhost:3000",
+        "method": "get",
+        "url": "/resume/L_Lra6nC5VY",
+        "data": "{}",
+        "allowAbsoluteUrls": true
+      },
+      "request": {},
+      "id": "CJMxKSj8nIg"
+    },
+    {
+      "name": ",jhfljasdas",
+      "location": "lgweldew",
+      "jobTitle": "",
+      "email": "iug;iwyerfligypi;wefwe",
+      "contactNumber": "etyerertyr",
+      "linkedin": "6u",
+      "github": "ertyr",
+      "degree": "w45y34",
+      "college": "erty34rtwey34",
+      "year": "34y34",
+      "summary": "",
+      "id": "pi6oq4ldiq0"
+    },
+    {
+      "name": ",jhfljasdas",
+      "location": "lgweldew",
+      "jobTitle": "",
+      "email": "iug;iwyerfligypi;wefwe",
+      "contactNumber": "etyerertyr",
+      "linkedin": "6u",
+      "github": "ertyr",
+      "degree": "w45y34",
+      "college": "erty34rtwey34",
+      "year": "34y34",
+      "summary": "",
+      "id": "YeHHsQbRpcs"
+    },
+    {
+      "id": "iYDukZJueK0"
+    },
+    {
+      "id": "au8wkVns4ZU"
+    },
+    {
+      "id": "p5dkO4nfOeg"
+    },
+    {
+      "id": "MmdudoF67Sg"
+    },
+    {
+      "id": "ksxjfT6WCaw"
+    },
+    {
+      "name": "DON DAVIS",
+      "location": "THRISSUR",
+      "jobTitle": "HR Manager",
+      "email": "don@gmail.com",
+      "contactNumber": "9544598386",
+      "linkedin": "don9830",
+      "github": "don3098",
+      "degree": "BCA",
+      "college": "bharathiyar univercity",
+      "year": "2022",
+      "skill": [
+        "Recruitment",
+        "Employee Relations",
+        "Performance Management",
+        "Payroll",
+        "HR Policies",
+        "Talent Management",
+        "Onboarding",
+        "Training",
+        "Conflict Resolution",
+        "HR Analytics"
+      ],
+      "summary": "People-focused HR manager experienced in recruitment, employee relations, performance management, talent development, and HR operations.",
+      "id": "fharSgvFxRM"
+    },
+    {
+      "id": "RY_hPAeBgxM"
+    },
+    {
+      "id": "JAr0Qa3I7mU"
+    },
+    {
+      "name": "DON DAVIS",
+      "location": "THRISSUR",
+      "jobTitle": "HR Manager",
+      "email": "don@gmail.com",
+      "contactNumber": "9544598386",
+      "linkedin": "don9830",
+      "github": "don3098",
+      "degree": "BCA",
+      "college": "bharathiyar univercity",
+      "year": "2022",
+      "skill": [
+        "Recruitment",
+        "Employee Relations",
+        "Performance Management",
+        "Payroll",
+        "HR Policies",
+        "Talent Management",
+        "Onboarding",
+        "Training",
+        "Conflict Resolution",
+        "HR Analytics"
+      ],
+      "summary": "People-focused HR manager experienced in recruitment, employee relations, performance management, talent development, and HR operations.",
+      "id": "eVTpz_Ws0jU"
+    },
+    {
+      "id": "3znOVkqwkj4"
+    },
+    {
+      "id": "0kbpUcY11l8"
+    },
+    {
+      "id": "lKK8kwUWFpc"
+    },
+    {
+      "id": "--5e_hf-ivo"
+    },
+    {
+      "id": "Yek8ZcWHZJo"
+    },
+    {
+      "id": "fN-SKcqpPq0"
+    },
+    {
+      "id": "2Ry9kHW1B_c"
+    },
+    {
+      "id": "jg9UTy70gcg"
+    },
+    {
+      "id": "uvhORss9_mE"
+    },
+    {
+      "id": "rLlQHYm6kyQ"
+    },
+    {
+      "id": "_yt6iUhoNvM"
+    },
+    {
+      "id": "D3gTI7p9vdE"
+    },
+    {
+      "id": "mwOo2ctAX0Y"
+    },
+    {
+      "id": "gfRXz__hxtU"
+    },
+    {
+      "id": "SZFV8dH0SdQ"
+    },
+    {
+      "id": "FvU0Rnmudos"
+    },
+    {
+      "name": "DON DAVIS",
+      "location": "THRISSUR",
+      "jobTitle": "HR Manager",
+      "email": "don@gmail.com",
+      "contactNumber": "9544598386",
+      "linkedin": "don9830",
+      "github": "don3098",
+      "degree": "BCA",
+      "college": "bharathiyar univercity",
+      "year": "2022",
+      "skill": [
+        "Recruitment",
+        "Employee Relations",
+        "Performance Management",
+        "Payroll",
+        "HR Policies",
+        "Talent Management",
+        "Onboarding",
+        "Training",
+        "Conflict Resolution",
+        "HR Analytics"
+      ],
+      "summary": "People-focused HR manager experienced in recruitment, employee relations, performance management, talent development, and HR operations.",
+      "id": "dcMLlEVkhHs"
+    },
+    {
+      "id": "QvGx3xAcGV8"
+    },
+    {
+      "id": "LE1NGhfJXIs"
+    },
+    {
+      "id": "mLzuLdOpaPw"
+    },
+    {
+      "id": "kj6OXAGiCY8"
+    },
+    {
+      "id": "QKBmYTLagTA"
+    },
+    {
+      "id": "3PduVW-Pbrs"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

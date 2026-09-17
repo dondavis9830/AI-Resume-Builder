@@ -12,7 +12,14 @@ export const viewAllResume = async() => {
     return await axiosService('GET',`/resume`,{})
 }
 
-// del
 export const delResumeAPI = async(id)=>{
     return await axiosService('DELETE',`/resume/${id}`,{})
+}
+
+export const downloadSavedResumAPI = async(resume) => {
+    return await axiosService('POST',`/history`,resume)
+}
+
+export const allDownloadedResumesAPI = async()=>{
+    return await axiosService('GET',`/history`,{})
 }

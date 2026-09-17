@@ -4,7 +4,9 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper';
 import Modal from '@mui/material/Modal';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { allDownloadedResumesAPI } from '../services/apiServices';
+import Divider from '@mui/material/Divider';
 
 const style = {
   position: 'absolute',
@@ -20,9 +22,22 @@ const style = {
 
 
 export default function Download() {
-   const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [resumedata,setResumeData]=useState([])
+  const viewDownloads=async()=>{
+    try{
+      const res = await allDownloadedResumesAPI()
+      console.log(res.data);
+      setResumeData(res.data)
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
+  useEffect(()=>{viewDownloads()},[])
 
   return (
     <div>
@@ -66,17 +81,91 @@ export default function Download() {
                   justifyContent:'space-evenly',
                   flexWrap: 'wrap',
                   mx:10,
-                  my:10
+                  my:10,
+                  gap:5
                   }}>
             
-      <Paper elevation={20} sx={{width:400,height:500,my:5}} />
-      
-      
-   
+        {
+          resumedata.map(item=>(
+            <Box>
+              <Paper sx={{ width:400,height:'auto', }}>
+          <Stack direction='column' 
+          sx={{
+            gap:1,
+            padding:5,
 
+          }}>
+          <Typography variant='h5' sx={{fontWeight:700,fontFamily:'-moz-initial'}}>{item.name}</Typography>
+          <Stack direction='row'>
+            <Typography>Email:{item.email}</Typography>
+          </Stack>
+          <Stack direction='row'>
+            <Typography>Email:{item.contactNumber}</Typography>
+          </Stack>
+          <Stack direction='row'>
+            <Typography>LinkedIn:{item.linkedin}</Typography>
+          </Stack>
+          <Stack direction='row'>
+            <Typography>Github:{item.github}</Typography>
+          </Stack>
+          <Stack direction='row'>
+            <Typography>Location:{item.location}</Typography>
+          </Stack>
+           <Divider>
+          <Typography variant='h5' 
+                      sx={{
+                        fontFamily:'-moz-initial',
+                        fontWeight:500
+          }}>
+            Professional Summary
+          </Typography>
+        </Divider>
+         <Typography>
+           {item.summary}
+         </Typography>
+           <Divider>
+          <Typography variant='h5' 
+                      sx={{
+                        fontFamily:'-moz-initial',
+                        fontWeight:500
+          }}>
+           Technical Skills
+          </Typography>
+        </Divider>
+        <Box>
+         {item?.skill?.map(item=>(
+          <Typography>{item}</Typography>
+         ))}
+          
+          </Box>
+           <Divider>
+          <Typography variant='h5' 
+                      sx={{
+                        fontFamily:'-moz-initial',
+                        fontWeight:500
+          }}>
+           Education
+          </Typography>
+        </Divider>
+        <Stack direction='row'>
+            <Typography>Degree:{item.degree}</Typography>
+          </Stack>
+          <Stack direction='row'>
+            <Typography>Collage:{item.college}</Typography>
+          </Stack>
+          <Stack direction='row'>
+            <Typography>Year of Graduation:{item.year}</Typography>
+          </Stack>
+        
+          
+        </Stack>
+       
+        </Paper>
+            </Box>
+          ))
+        }
         </Stack>
       </Box>
-
     </div>
   )
 }

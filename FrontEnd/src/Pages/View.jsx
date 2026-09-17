@@ -10,7 +10,11 @@ import { FaDownload } from "react-icons/fa6";
 import { CiEdit } from "react-icons/ci";
 import { FaBackward } from "react-icons/fa";
 import { useParams } from 'react-router-dom'
-import { viewResumeAPI } from '../services/apiServices'
+import { downloadSavedResumAPI, viewResumeAPI } from '../services/apiServices'
+import Swal from 'sweetalert2'
+import TextField from '@mui/material/TextField'
+import OutlinedInput from '@mui/material/OutlinedInput'
+
 
 const style = {
   position: 'absolute',
@@ -24,18 +28,20 @@ const style = {
   p:2,
 };
 
+
+
 export default function View() {
 
   const [resume,setResume]=useState({})
-  
+  const [resumedata,setResumedata]=useState({})
   const {id} =useParams()
-  console.log(id);
+  // console.log(id);
 
   const viewResume = async(id) => {
     try{
-      console.log(`don`)
+      // console.log(`don`)
       const res = await viewResumeAPI(id)
-      console.log(res.data);
+      // console.log(res.data);
       setResume(res.data)
     }
     catch(err){
@@ -45,7 +51,23 @@ export default function View() {
 
   useEffect(()=>{viewResume(id)},[])
 
+  const downloadCV=async()=>{
+    try{
+      const Data = downloadSavedResumAPI(resume)
+      console.log(Data);
+      Swal.fire({
+        title: "Download Compleated....",
+        icon: "success",
+        draggable: true
+});
+      
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
 
+  useEffect(()=>{downloadCV(id)},[])
  
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -64,7 +86,7 @@ export default function View() {
                       }}>
             <Stack direction='row' sx={{justifyContent:'center',alignItems:'center' , }}>
               <FaDownload />
-              <Button sx={{color:'crimson',}}> Download CV</Button>
+              <Button onClick={downloadCV} sx={{color:'crimson',}}> Download CV</Button>
             </Stack>
             <Stack direction='row' sx={{justifyContent:'center',alignItems:'center' , }}>
               <CiEdit />
@@ -94,7 +116,7 @@ export default function View() {
           }}>
           <Typography variant='h5' sx={{fontWeight:700,fontFamily:'-moz-initial'}}></Typography>
           <Stack direction='row'>
-            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Name:{resume.name}</Typography>
+            <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Name:<TextField sx={{outline:'none'}}></TextField></Typography>
           </Stack>
           <Stack direction='row'>
             <Typography sx={{fontStyle:'revert-layer', fontWeight:600}}>Email:</Typography>
