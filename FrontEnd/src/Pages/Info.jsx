@@ -36,7 +36,7 @@ import Preview from '../Components/Preview'
           <Box sx={{
             
           }}>
-            <Preview resumeDetails={resumeDetails} />
+            {resumeDetails.name && <Preview resumeDetails={resumeDetails} />}
           </Box>
         </Stack>
       </Box>
