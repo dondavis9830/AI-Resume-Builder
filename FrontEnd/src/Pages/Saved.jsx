@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { Stack } from '@mui/system'
@@ -50,16 +50,24 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 // ];
 
 
-
 export default function Saved() {
 
   const [resume,setResume]=useState([])
+  const [search,setSearch]=useState('')
+  const [dummyAllResume,setDummyAllResume]=useState([])
+
+  console.log(search);
+
+  const searchOutput =useMemo(()=>{
+     setResume(dummyAllResume.filter(item=>item.jobTitle.toLowerCase().includes(search.toLowerCase())))
+  },[search])
 
   const getallresume=async()=>{
     try{
       const res = await viewAllResume()
-      // console.log(res.data);
+      console.log(res.data);
       setResume(res.data)
+      setDummyAllResume(res.data)
     }
     catch(err){
       console.log(err);
@@ -117,7 +125,7 @@ const deleteResume=async(id)=>{
               sx={{ '& > :not(style)': { m: 1, width: '100ch' } }}
               noValidate
               autoComplete="off">
-           <TextField id="outlined-basic" label="Search Resume" variant="outlined" />
+           <TextField onChange={(e)=>setSearch(e.target.value)} id="outlined-basic" label="Search Resume" variant="outlined"/>
          </Box>
       </Stack>
       <Box sx={{width:'80%',mx:'auto'}}>

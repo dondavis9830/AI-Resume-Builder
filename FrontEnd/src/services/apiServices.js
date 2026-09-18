@@ -23,3 +23,4 @@ export const downloadSavedResumAPI = async(resume) => {
 export const allDownloadedResumesAPI = async()=>{
     return await axiosService('GET',`/history`,{})
 }
+
